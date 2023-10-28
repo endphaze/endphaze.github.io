@@ -1,0 +1,105 @@
+
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="stylesheet" href="css/style.css">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css" integrity="sha512-z3gLpd7yknf1YoNbCzqRKc4qyor8gaKU1qmn+CShxbuBusANI9QpRohGBreCFkKxLhei6S9CQXFEbbKuqLg0DA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Prompt:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap" rel="stylesheet">
+        <link rel="icon" type="images/x-icon" href="img/icon.png" />
+        <title>101 TETRIS</title>
+    </head>
+<body>
+    <div class="titlebox">
+        <p>101 TETRIS</p>
+    </div>
+    <div class="content-box">
+        <div class="text-content">
+        <p1>Abstract</p1>
+        <p>โปรเจ็กนี้เป็นการพัฒนาซอฟต์แวร์เกม โดยมีต้นแบบมาจากเกม Tetris ซึ่งมีชื่อโปรเจ็กว่า 101 TETRIS เพื่อนำความรู้จากวิชา Physical Computing มาปรับใช้ในการทำซอฟต์แวร์เกมจากภาษาคอมพิวเตอร์ C โดยตัวเกมจะมีบล็อกเลโก้ตกลงมาต้องเรียงโดยเอาชีวิตรอดให้นานที่สุดเพื่อเก็บคะแนน โดยการควบคุมจะใช้เพียงแค่ปุ่ม A และ D เท่านั้น</p>
+        </div>
+    </div>
+    <div class="content-box">
+        <img src="/img/start.png">
+
+        <div class="text-content">
+        <p1>Details</p1>
+        <p>- จะมีตัว lego ลงมาจากด้านบนให้เราควบคุมเพื่อจัดสรรพื้นที่ให้ได้มากที่สุด</p>
+            <p>- การควบคุมจะใช้ A เพื่อไปซ้าย  D เพื่อไปขวา (มี delay ในการทำงาน เพราะฉนั้นค่อยๆกดนะครับ)</p>
+            <p>- ถ้ามี lego ชนและหยุดขยับ จะได้รับคะแนนเพิ่ม 10 คะแนน</p>
+            <p>- หาก lego ที่บังคับอยู่ชนและอยู่นอกพื้นที่ เกมจะจบทันที</p>
+            <p>- จะมีการบอก score ผู้เล่นเมื่อจบเกม</p>
+        </div>
+    </div>
+    <div class="content-box">
+        <img src="/img/flowchart.png">
+        <div class="text-content">
+        <p1>ขั้นตอนการทำงานของระบบ</p1>
+        <p>- โดยเมื่อเริ่มเปิดเกมระบบจะเช็คว่าเกมจบหรือยัง ถ้ายังไม่จบให้อัปเดทแผนที่ ถ้าจบแล้วจะแสดงผลคะแนน</p>
+            <p>- ถ้าเกมยังไม่จบจะทำการอัปเดทข้อมูลของแผนที่ ตำแหน่งของตัวเลโก้</p>
+            <p>- รับค่า Input จาก Keyboard เป็นปุ่ม A หรือ D</p>
+            <p>- แสดงผลตำแหน่งของเลโก้บนแผนที่</p>
+            <p>- ดีเลย์0.5วินาที และจึงเคลียร์หน้าจอ</p>
+            <p>- ทำการเช็คว่าเกมจบไหมถ้าเกมจบแล้วแสดงผลคะแนน ถ้ายังไม่จบจะทำซ้ำต่อไปเรื่อยๆ</p>
+        </div>
+    </div>
+    <div class="content-box">
+        <img src="/img/update.png">
+        <div class="text-content">
+        <p1>การทำงานส่วนใหญ่นั้นจะเป็นแก้ไข map[HEIGHT][WIDTH] </p1>
+        <p1>และ นำไปวนลูปแสดงผล</p1>
+        
+        </div>
+    </div>
+    <div class="content-box">
+        <img src="/img/create.png">
+        <div class="text-content">
+        <p1>การสร้าง lego</p1>
+        <p>- จะทำการจองพื้นที่ใน memory </p>
+            <p>- แล้วกำหนดค่าต่างๆ (รูปแบบ, ตำแหน่ง)</p>
+            <p>- แล้วให้ตัวpointer (playingLego) ชี้ไปยัง address นั้นๆ</p>
+        </div>
+    </div>
+    <div class="content-box">
+        <img src="/img/git.png">
+        <div class="text-content">
+        <p1>GITHUB</p1>
+        <a href="https://github.com/endphaze/101-TETRIS">https://github.com/endphaze/101-TETRIS</a>
+        
+        
+        </div>
+    </div>
+    <div class="content-box">
+        <img src="/img/YT.png">
+        <div class="text-content">
+        <p1>YouTube</p1>
+        <a href="https://www.youtube.com/watch?v=fEFm1iwLDJI">https://www.youtube.com/watch?v=fEFm1iwLDJI</a>
+        </div>
+    </div>
+    <div class="content-box">
+        <img src="/img/poster.png">
+        <div class="text-content">
+        <p1>Poster</p1>
+        <a href="https://drive.google.com/file/d/1jqFof2j5XoYcqpyI6QuF_KfZ9GpuZ2eW/view?usp=sharing">https://drive.google.com/file/d/1jqFof2j5XoYcqpyI6QuF_KfZ9GpuZ2eW/view?usp=sharing</a>
+        
+        </div>
+    </div>
+    <div class="content-box">
+        <div class="text-content">
+        <p1>รายชื่อสมาชิก</p1>
+        <p>กิตติ์ชินทักษ์ หรรษานนท์โชติ 65070018</p>
+            <p>จิรโชติ อินทรวงษ์โชติ 65070035</p>
+            <p>ณัฐนนท์ วงศ์หนองแวง 65070076</p>
+            <p>ณัฐพงศ์ มาสำราญ 65070078</p>
+        </div>
+    </div>
+    
+    <!-- Footer -->
+    <footer>
+        <p>&copy; 2023 Physical Computing Project</p>
+    </footer>
+</body>
+</html>
