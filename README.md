@@ -1,1 +1,3 @@
-# endphaze.github.io
+﻿# 101-TETRIS
+
+คำเตือน โปรแกรมนี้ถูกคอมไพล์โดย MINGW หากคอมไพล์โดย CYGWIN อาจจะเกิด error ได้
